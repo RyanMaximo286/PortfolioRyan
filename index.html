@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio Pessoal de Ryan Pablo Parode Máximo</title>
+    <style>
+        /* Estilos para o reset de margens e paddings */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Estilos para o header */
+        header {
+            text-align: center;
+            background-color: #ffffff; /* Fundo branco */
+            padding: 10px 0;
+        }
+
+        header h1 {
+            font-size: 32px; /* Aumentando o tamanho da fonte */
+            margin: 20px 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav-item {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #007bff; /* Cor da borda azul */
+            border-radius: 5px; /* Bordas arredondadas */
+            background-color: #f0f0f0; /* Cor de fundo */
+        }
+
+        .nav-item a {
+            text-decoration: none;
+            color: #007bff; /* Cor do texto azul */
+            font-weight: bold;
+        }
+
+        .nav-item a:hover {
+            background-color: #007bff; /* Cor de fundo ao passar o mouse */
+            color: #fff; /* Cor do texto ao passar o mouse */
+        }
+
+        /* Estilos para o conteúdo dinâmico */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .section {
+            margin-top: 20px;
+        }
+
+        .section p {
+            font-size: 18px; /* Aumentando o tamanho da fonte */
+        }
+
+        /* Estilos para o rodapé */
+        footer {
+            background-color: #007bff; /* Azul primário */
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Portfólio Pessoal de Ryan Pablo Parode Máximo</h1>
+            <nav>
+                <ul>
+                    <li class="nav-item"><a href="#" onclick="mostrarConteudo('sobre');">Sobre Mim</a></li>
+                    <li class="nav-item"><a href="#" onclick="mostrarConteudo('formacao');">Formação Educacional</a></li>
+                    <li class="nav-item"><a href="#" onclick="mostrarConteudo('portfolio');">Portfólio</a></li>
+                    <li class="nav-item"><a href="#" onclick="mostrarConteudo('contato');">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <h2 id="titulo-secao" class="titulo-secao">Selecione uma das opções acima para visualizar as informações.</h2>
+        <div id="conteudo-dinamico"></div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Ryan Pablo Parode Máximo. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        function mostrarConteudo(secao) {
+            switch (secao) {
+                case 'sobre':
+                    document.getElementById('titulo-secao').innerText = 'Sobre Mim';
+                    document.getElementById('conteudo-dinamico').innerHTML = `
+                        <section class="section">
+                            <p>Meu nome é Ryan Pablo Parode Máximo.</p>
+                            <p>Nascido em 10 de março de 2002, atualmente com 22 anos.</p>
+                            <p>Gosto de esportes, video game, cachorros e também tenho interesse em cozinhar.</p>
+                        </section>
+                    `;
+                    break;
+                case 'formacao':
+                    document.getElementById('titulo-secao').innerText = 'Formação Educacional';
+                    document.getElementById('conteudo-dinamico').innerHTML = `
+                        <section class="section">
+                            <p>Sou formado no ensino médio e no curso de Eletricista Industrial pelo SENAI.</p>
+                            <p>Atualmente, estou cursando Ciência de Dados na Uninter.</p>
+                        </section>
+                    `;
+                    break;
+                case 'portfolio':
+                    document.getElementById('titulo-secao').innerText = 'Portfólio';
+                    document.getElementById('conteudo-dinamico').innerHTML = `
+                        <section class="section">
+                            <h3>Meu Portfólio</h3>
+                            <p>Aqui você pode baixar meu arquivo de portfólio:</p>
+                            <p><a href="meu_portfolio.pdf" download>Download do Portfólio (PDF)</a></p>
+                        </section>
+                    `;
+                    break;
+                case 'contato':
+                    document.getElementById('titulo-secao').innerText = 'Contato';
+                    document.getElementById('conteudo-dinamico').innerHTML = `
+                        <section class="section">
+                            <form action="#" method="POST">
+                                <label for="nome">Nome:</label><br>
+                                <input type="text" id="nome" name="nome" required><br><br>
+                                <label for="email">Email:</label><br>
+                                <input type="email" id="email" name="email" required><br><br>
+                                <label for="mensagem">Mensagem:</label><br>
+                                <textarea id="mensagem" name="mensagem" rows="4" required></textarea><br><br>
+                                <input type="submit" value="Enviar">
+                            </form>
+                        </section>
+                    `;
+                    break;
+                default:
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>
